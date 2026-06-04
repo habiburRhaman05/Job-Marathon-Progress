@@ -49,12 +49,48 @@ console.log(countVowels("javascript"));
 
 function isPalindrome(str){
     let clean = str.toLowerCase().replace(/[^a-z0-9]/g,"");
-    
-
     let reversed = clean.split("").reverse().join("");
-
     return clean === reversed;
-
 }
 
 console.log(isPalindrome("racecar"));
+
+
+// Problem 9: Capitalize First Letter of Each Word  [Easy]
+// Description: Write a function titleCase(str) that capitalizes the first letter of every word in a string.
+// Example:
+// Input: 'hello world'  → Output: 'Hello World'
+
+
+function titleCase(n){
+  let names = n.split(" ");
+  let output = []
+  for (let i = 0; i < names.length; i++) {
+     let r = names[i].charAt(0).toUpperCase() + names[i].slice(1);
+     output.push(r)
+  };
+  return output.join(" ");
+}
+
+console.log(titleCase("hello world how are you have you good"));
+
+
+
+// Problem 10: Count Occurrences of a Character  [Easy]
+// Description: Write a function countChar(str, char) that returns how many times a character appears in a string.
+// Example:
+// Input: 'banana', 'a'  → Output: 3
+// Hint: Use split(char).length - 1 or a loop.
+
+
+function countChar(str,char){
+  let count = 0;
+  for (const s of str) {
+    if(s === char){
+      count++
+    }
+  };
+  // return str.split(char).length - 1
+  return count
+}
+console.log(countChar("habaiab","a"));
