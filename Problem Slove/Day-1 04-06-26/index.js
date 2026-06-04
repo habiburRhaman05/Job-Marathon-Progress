@@ -39,3 +39,22 @@ function countVowels(str){
 
 };
 console.log(countVowels("javascript"));
+
+
+// Problem 8: Check Palindrome  [Easy]
+// Description: Write a function isPalindrome(str) that returns true if the string reads the same forwards and backwards.
+// Example:
+// Input: 'racecar'  → Output: trueInput: 'hello'    → Output: false
+// Hint: Compare the string to its reverse.
+
+function isPalindrome(str){
+    let clean = str.toLowerCase().replace(/[^a-z0-9]/g,"");
+    
+
+    let reversed = clean.split("").reverse().join("");
+
+    return clean === reversed;
+
+}
+
+console.log(isPalindrome("racecar"));
