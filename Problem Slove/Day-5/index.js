@@ -134,7 +134,6 @@ function memoize(fn){
 
 function curry(fn) {
   return function(a) {
-
     return function(b) {
       return fn(a, b);
     };
