@@ -125,9 +125,9 @@ const copied = deepClone(original);
 copied.address.city = "Barisal";
 copied.skills[0] = "Next.js";
 
-console.log(original.address.city); // Dhaka
-console.log(original.skills[0]);    // React
-  console.log(copied);
+// console.log(original.address.city); // Dhaka
+// console.log(original.skills[0]);    // React
+//   console.log(copied);
   
 
 
@@ -157,4 +157,29 @@ class EventEmitter {
       listener(...args);
     });
   }
-}
+};
+
+
+// Problem 35: Implement Array.prototype.map from Scratch  [Medium]
+// Description: Write a function myMap(arr, callback) that replicates the behavior of Array.prototype.map without using the built-in map().
+// Example:
+// myMap([1,2,3], x => x * 2);// Output: [2, 4, 6]
+// Hint: Loop through the array, apply the callback to each element, push results to a new array.
+
+
+function myMap (arr,callback) {
+ let output = []
+  for (let i = 0; i < arr.length; i++) {
+   let res =  callback(arr[i]);
+   output.push(res)
+  };
+  return output
+};
+
+
+console.log(myMap([1,2,3], x => x * 2));
+
+
+
+
+
