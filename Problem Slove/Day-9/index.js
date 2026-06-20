@@ -62,4 +62,39 @@ function rotateArray(arr,k){
       
 }
 
-console.log(rotateArray([1,2,3,4,5],12));
+// console.log(rotateArray([1,2,3,4,5],12));
+
+
+// Problem 49: Roman to Integer  [Medium]
+// Description: Write a function romanToInt(s) that converts a Roman numeral string to an integer.
+// Example:
+// Input: 'III'   → Output: 3Input: 'IX'    → Output: 9Input: 'LVIII' → Output: 58
+function romanToInt(s) {
+  const romanMap = new Map([
+    ['I', 1],
+    ['V', 5],
+    ['X', 10],
+    ['L', 50],
+    ['C', 100],
+    ['D', 500],
+    ['M', 1000],
+  ]);
+
+  let output = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    let current = romanMap.get(s[i]);
+    let next = romanMap.get(s[i + 1]);
+
+    if (next && current < next) {
+      output += (next - current);
+      i++; // skip next
+    } else {
+      output += current;
+    }
+  }
+
+  return output;
+}
+
+console.log(romanToInt("IV")); // 4
