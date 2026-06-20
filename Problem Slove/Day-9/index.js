@@ -39,4 +39,27 @@ class LRU {
 
         return key;
     }
+};
+
+
+// Problem 48: Rotate an Array  [Medium]
+// Description: Write a function rotateArray(arr, k) that rotates an array to the right by k steps.
+// Example:
+//Input: [1,2,3,4,5], k=2 Output: [4,5,1,2,3
+
+
+function rotateArray(arr,k){
+      if( arr.length === 0) return []
+      let arrLength = arr.length
+      k = k % arrLength
+      console.log(k);
+      
+      
+      let lastPart = arr.slice(arrLength - k);
+    let firstPart = arr.slice(0,arrLength-k);
+      
+    return [...lastPart,...firstPart]
+      
 }
+
+console.log(rotateArray([1,2,3,4,5],12));
